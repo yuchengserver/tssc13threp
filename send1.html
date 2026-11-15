@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔒 匿名意見投遞 - TSSC13TH 胡台校意見箱</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://script.google.com https://script.googleusercontent.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' https://tssc13th.github.io data:;">
+
+    <title> 匿名意見投遞 - TSSC13TH 胡台校意見箱</title>
     <link rel="icon" type="image/png" href="tsscblack.png">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -21,15 +23,15 @@
         }
 
         .navbar {
-    width: 100%;             
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb; 
-    padding: 0.8rem 0;
-    box-shadow: none;        
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+            width: 100%;             
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb; 
+            padding: 0.8rem 0;
+            box-shadow: none;       
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
         .nav-container {
             max-width: 1100px;
@@ -92,7 +94,6 @@
             border-color: #bfdbfe;
         }
 
-        /* 預設隱藏手機專用的按鈕與遮罩 */
         .hamburger-btn, .close-drawer-btn, .drawer-overlay {
             display: none;
         }
@@ -150,144 +151,136 @@
         }
 
         @media screen and (max-width: 768px) {
-    .navbar .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 16px;
-        position: relative;
-    }
+            .navbar .nav-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 16px;
+                position: relative;
+            }
 
-    /* 顯示漢堡按鈕 */
-    .hamburger-btn {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-        border: none;
-        font-size: 1.5rem;
-        color: #1e293b;
-        cursor: pointer;
-        padding: 4px;
-    }
+            .hamburger-btn {
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+                background: transparent;
+                border: none;
+                font-size: 1.5rem;
+                color: #1e293b;
+                cursor: pointer;
+                padding: 4px;
+            }
 
-    .navbar .nav-brand {
-        font-size: 0.95rem;
-        gap: 6px;
-        flex: 1;
-        margin-left: 10px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+            .navbar .nav-brand {
+                font-size: 0.95rem;
+                gap: 6px;
+                flex: 1;
+                margin-left: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
 
-    .navbar .site-logo {
-        width: 32px;
-        height: auto;
-    }
+            .navbar .site-logo {
+                width: 32px;
+                height: auto;
+            }
 
-    /* 💡 手機版左側隱藏抽屜選單本體 */
-    .nav-menu, .nav-links {
-        position: fixed;
-        top: 0;
-        left: -280px;
-        width: 260px;
-        height: 100vh;
-        background-color: #ffffff !important;
-        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
-        z-index: 2000 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        align-items: stretch !important;
-        padding: 20px !important;
-        gap: 12px !important;
-        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+            .nav-menu, .nav-links {
+                position: fixed;
+                top: 0;
+                left: -280px;
+                width: 260px;
+                height: 100vh;
+                background-color: #ffffff !important;
+                box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+                z-index: 2000 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important;
+                align-items: stretch !important;
+                padding: 20px !important;
+                gap: 12px !important;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
 
-    /* 展開狀態 */
-    .nav-menu.open, .nav-links.open {
-        left: 0 !important;
-    }
+            .nav-menu.open, .nav-links.open {
+                left: 0 !important;
+            }
 
-    /* 📌 手機版抽屜頂部標題區塊（與 ✕ 按鈕並排） */
-    .drawer-header {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding-bottom: 12px;
-        margin-bottom: 8px;
-        border-bottom: 1px solid #e2e8f0;
-        width: 100%;
-    }
+            .drawer-header {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding-bottom: 12px;
+                margin-bottom: 8px;
+                border-bottom: 1px solid #e2e8f0;
+                width: 100%;
+            }
 
-    .drawer-title {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: #1e293b;
-    }
+            .drawer-title {
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: #1e293b;
+            }
 
-    /* 關閉按鈕 (✕) */
-    .close-drawer-btn {
-        display: block !important;
-        position: static !important;
-        background: transparent;
-        border: none;
-        font-size: 1.4rem;
-        color: #64748b;
-        cursor: pointer;
-        padding: 2px 6px;
-    }
+            .close-drawer-btn {
+                display: block !important;
+                position: static !important;
+                background: transparent;
+                border: none;
+                font-size: 1.4rem;
+                color: #64748b;
+                cursor: pointer;
+                padding: 2px 6px;
+            }
 
-    /* 💡 手機版抽屜內的選單按鈕 */
-    .nav-menu .nav-pill-btn, .nav-links .nav-item {
-        width: 100% !important;
-        display: flex !important;
-        text-align: left !important;
-        padding: 12px 16px !important;
-        font-size: 1rem !important;
-        justify-content: flex-start !important;
-        color: #475569 !important;
-        background-color: #f8fafc !important;
-        border: 1px solid #e2e8f0 !important;
-        border-radius: 8px !important;
-        white-space: nowrap;
-        cursor: pointer !important;
-        text-decoration: none;
-    }
+            .nav-menu .nav-pill-btn, .nav-links .nav-item {
+                width: 100% !important;
+                display: flex !important;
+                text-align: left !important;
+                padding: 12px 16px !important;
+                font-size: 1rem !important;
+                justify-content: flex-start !important;
+                color: #475569 !important;
+                background-color: #f8fafc !important;
+                border: 1px solid #e2e8f0 !important;
+                border-radius: 8px !important;
+                white-space: nowrap;
+                cursor: pointer !important;
+                text-decoration: none;
+            }
 
-    .nav-menu .nav-pill-btn.active, .nav-links .nav-item.active {
-        background-color: #eff6ff !important;
-        color: #2563eb !important;
-        border-color: #bfdbfe !important;
-    }
+            .nav-menu .nav-pill-btn.active, .nav-links .nav-item.active {
+                background-color: #eff6ff !important;
+                color: #2563eb !important;
+                border-color: #bfdbfe !important;
+            }
 
-    .container, .admin-header-bar, #admin-dashboard {
-        padding: 0 12px;
-        margin: 10px auto 20px;
-    }
+            .container, .admin-header-bar, #admin-dashboard {
+                padding: 0 12px;
+                margin: 10px auto 20px;
+            }
 
-    .feedback-form, .form-card, .card, .login-card, .info-section {
-        padding: 20px 16px;
-        border-radius: 12px;
-        margin: 10px auto;
-    }
+            .feedback-form, .form-card, .card, .login-card, .info-section {
+                padding: 20px 16px;
+                border-radius: 12px;
+                margin: 10px auto;
+            }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        font-size: 16px !important; 
-        padding: 10px 12px;
-    }
-}
-
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px !important; 
+                padding: 10px 12px;
+            }
+        }
     </style>
 </head>
 <body>
-   
+    
     <nav class="navbar">
         <div class="nav-container">
-            <!-- 手機版漢堡按鈕 -->
             <button class="hamburger-btn" onclick="toggleDrawer()" aria-label="開啟選單">
                 ☰
             </button>
@@ -297,26 +290,22 @@
                 <span class="brand-text">TSSC13TH 胡台校意見箱</span>
             </a>
 
-            <!-- 導覽選單（手機版切換為隱藏抽屜） -->
-           <!-- 導覽選單（手機版切換為隱藏抽屜） -->
-<div class="nav-menu" id="navDrawer">
-    <div class="drawer-header">
-        <span class="drawer-title">TSSC意見箱</span>
-        <button type="button" class="close-drawer-btn" onclick="toggleDrawer()" aria-label="關閉選單">✕</button>
-    </div>
-    <a href="index.html" class="nav-pill-btn">首頁與須知</a>
-    <a href="replies.html" class="nav-pill-btn">匿名回覆專區</a>
-    <a href="myreplies.html" class="nav-pill-btn">我的實名回覆</a>
-    
-</div>
+            <div class="nav-menu" id="navDrawer">
+                <div class="drawer-header">
+                    <span class="drawer-title">TSSC意見箱</span>
+                    <button type="button" class="close-drawer-btn" onclick="toggleDrawer()" aria-label="關閉選單">✕</button>
+                </div>
+                <a href="index.html" class="nav-pill-btn">首頁與須知</a>
+                <a href="replies.html" class="nav-pill-btn">匿名回覆專區</a>
+                <a href="myreplies.html" class="nav-pill-btn">我的實名回覆</a>
+            </div>
         </div>
     </nav>
 
-    <!-- 手機版背景半透明遮罩 -->
     <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
 
     <header class="hero-header" style="text-align: center; padding: 30px 20px 10px;">
-        <h1 style="color: #1e293b; margin-top: 5px;">🔒 匿名意見投遞</h1>
+        <h1 style="color: #1e293b; margin-top: 5px;"> 匿名意見投遞</h1>
         <p style="color: #64748b; margin-top: 6px;">無需填寫個人資料，您的意見將以完全匿名的方式提交給學生會</p>
     </header>
 
@@ -352,50 +341,35 @@
     </footer>
 
     <script>
-   
-function toggleDrawer() {
-    const drawer = document.getElementById('navDrawer');
-    if (drawer) {
-        drawer.classList.toggle('open');
-    }
-}
-
-document.addEventListener('click', function(event) {
-    const drawer = document.getElementById('navDrawer');
-    const hamburgerBtn = document.querySelector('.hamburger-btn');
-
-    if (drawer && drawer.classList.contains('open')) {
-    
-        if (!drawer.contains(event.target) && !hamburgerBtn.contains(event.target)) {
-            drawer.classList.remove('open');
+        function toggleDrawer() {
+            const drawer = document.getElementById('navDrawer');
+            if (drawer) {
+                drawer.classList.toggle('open');
+            }
         }
-    }
-});
+
+        document.addEventListener('click', function(event) {
+            const drawer = document.getElementById('navDrawer');
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+
+            if (drawer && drawer.classList.contains('open')) {
+                if (!drawer.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+                    drawer.classList.remove('open');
+                }
+            }
+        });
 
         const GAS_URL = 'https://script.google.com/macros/s/AKfycbzXm5TiQss1GUKkDF4TOZJMqAeraA63vrpecSEzAuIvcNOvGjF51HFWnNutWc1Mjx4f/exec';
-        const TARGET_SHEET_ID = '18fxfF-BnNlDnhCH0NORbNeWXKSo1KHmljfPCkpvJTKo';
         let statusInterval = null;
-        let consecutiveFailures = 0;
-
-        function handleSystemErrorAndLock(reason) {
-            console.error('系統狀態檢測異常，啟動安全鎖定機制:', reason);
-            if (statusInterval) {
-                clearInterval(statusInterval);
-            }
-            window.location.href = 'lock.html';
-        }
 
         function checkSystemStatus() {
-            fetch(`${GAS_URL}?action=checkLockStatus&spreadsheetId=${TARGET_SHEET_ID}&_t=${Date.now()}`)
+            fetch(`${GAS_URL}?action=checkLockStatus&_t=${Date.now()}`)
                 .then(res => {
-                    if (!res.ok) {
-                        throw new Error(`HTTP 錯誤 Status: ${res.status}`);
-                    }
+                    if (!res.ok) throw new Error(`HTTP 錯誤 Status: ${res.status}`);
                     return res.json();
                 })
                 .then(data => {
                     if (data && typeof data.locked !== 'undefined') {
-                        consecutiveFailures = 0;
                         if (data.locked === true) {
                             if (statusInterval) clearInterval(statusInterval);
                             window.location.href = 'lock.html';
@@ -403,25 +377,16 @@ document.addEventListener('click', function(event) {
                             if (statusInterval) clearInterval(statusInterval);
                             window.location.href = 'maintenance.html';
                         }
-                    } else {
-                        consecutiveFailures++;
-                        if (consecutiveFailures >= 3) {
-                            handleSystemErrorAndLock('無效的回傳資料格式');
-                        }
                     }
                 })
                 .catch(err => {
-                    console.warn('檢測連線波動:', err.message);
-                    consecutiveFailures++;
-                    if (consecutiveFailures >= 3) {
-                        handleSystemErrorAndLock(err.message || '連線失敗');
-                    }
+                    console.warn('檢測連線波動，維持現狀:', err.message);
                 });
         }
 
         window.onload = function() {
             checkSystemStatus();
-            statusInterval = setInterval(checkSystemStatus, 5000);
+            statusInterval = setInterval(checkSystemStatus, 10000); 
         };
 
         document.getElementById('anonymousForm').addEventListener('submit', function(e) {
@@ -435,6 +400,8 @@ document.addEventListener('click', function(event) {
                 return;
             }
 
+            const clientInfo = navigator.userAgent;
+
             const formData = {
                 action: 'addFeedback',
                 type: 'anonymous',
@@ -444,7 +411,8 @@ document.addEventListener('click', function(event) {
                 target_assignee: assigneeVal === '' ? '學生會' : assigneeVal,
                 assignee: assigneeVal === '' ? '學生會' : assigneeVal,
                 category: document.getElementById('category').value,
-                content: contentVal
+                content: contentVal,
+                clientInfo: clientInfo
             };
 
             const submitBtn = document.getElementById('submitBtn');

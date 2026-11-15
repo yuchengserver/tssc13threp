@@ -3,475 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📬 我的實名回覆 - TSSC13TH 胡台校意見箱</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://script.google.com https://script.googleusercontent.com https://accounts.google.com https://api.ipify.org https://ipapi.co; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' https://tssc13th.github.io https://lh3.googleusercontent.com https://www.google.com data:;">
+
+    <title>我的實名回覆 - TSSC13TH胡台校意見箱</title>
     <link rel="icon" type="image/png" href="tsscblack.png">
     <link rel="stylesheet" href="style.css">
     
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
-        }
-
-.navbar {
-    width: 100%;             
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb; 
-    padding: 0.8rem 0;
-    box-shadow: none;       
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #111827;
-            font-weight: 700;
-            font-size: 1.15rem;
-            gap: 10px;
-        }
-
-        .site-logo {
-            height: 32px;
-            width: auto;
-            object-fit: contain;
-            vertical-align: middle;
-            filter: brightness(0);
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-pill-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            text-decoration: none;
-            padding: 0.45rem 0.9rem;
-            font-size: 0.88rem;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            background-color: #f8fafc;
-            color: #475569;
-            border: 1px solid #e2e8f0;
-        }
-
-        .nav-pill-btn:hover {
-            background-color: #f1f5f9;
-            color: #1e293b;
-            border-color: #cbd5e1;
-        }
-
-        .nav-pill-btn.active {
-            background-color: #eff6ff;
-            color: #2563eb;
-            border-color: #bfdbfe;
-        }
-
-        /* 預設隱藏手機專用的按鈕與遮罩 */
-        .hamburger-btn, .close-drawer-btn, .drawer-overlay {
-            display: none;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 0 1.5rem;
-        }
-
-        .hero-header {
-            text-align: center;
-            padding: 10px 20px 20px;
-        }
-
-        .hero-header h1 {
-            color: #1e293b;
-            font-size: 1.8rem;
-        }
-
-        .hero-subtitle {
-            color: #64748b;
-            font-size: 0.95rem;
-            margin-top: 4px;
-        }
-
-        .main-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
-        }
-
-        #loginPromptArea {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 10px;
-            text-align: center;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        body { background-color: #f4f6f9; color: #333; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif; }
+        .navbar { width: 100%; background-color: #ffffff; border-bottom: 1px solid #e5e7eb; padding: 0.8rem 0; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { display: flex; align-items: center; text-decoration: none; color: #111827; font-weight: 700; font-size: 1.15rem; gap: 10px; }
+        .site-logo { height: 32px; width: auto; object-fit: contain; vertical-align: middle; filter: brightness(0); }
+        .nav-menu { display: flex; align-items: center; gap: 8px; }
+        .nav-pill-btn { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 0.45rem 0.9rem; font-size: 0.88rem; font-weight: 600; border-radius: 8px; transition: all 0.2s ease; cursor: pointer; background-color: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+        .nav-pill-btn:hover { background-color: #f1f5f9; color: #1e293b; border-color: #cbd5e1; }
+        .nav-pill-btn.active { background-color: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
+        .hamburger-btn, .close-drawer-btn, .drawer-overlay { display: none; }
+        .container { max-width: 850px; margin: 30px auto; padding: 0 1.5rem; }
+        .hero-header { text-align: center; padding: 10px 20px 20px; }
+        .hero-header h1 { color: #1e293b; font-size: 1.8rem; }
+        .hero-subtitle { color: #64748b; font-size: 0.95rem; margin-top: 4px; }
+        .main-card { background: #ffffff; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.03); border: 1px solid #e2e8f0; }
+        #loginPromptArea { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 10px; text-align: center; }
 
         .user-info-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #f8fafc;
-            padding: 12px 18px;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
+            padding: 16px 22px;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
             margin-bottom: 24px;
+            width: 100%;
+            gap: 15px;
         }
+        .user-details { display: flex; flex-direction: column; gap: 3px; overflow: hidden; }
+        .user-details span { font-size: 0.85rem; color: #64748b; }
+        .user-details .user-email { font-size: 1.05rem; font-weight: 700; color: #2563eb; word-break: break-all; }
+        .logout-google-btn { background-color: #ef4444; color: white; border: none; padding: 8px 18px; border-radius: 8px; font-size: 0.88rem; cursor: pointer; font-weight: 600; transition: background 0.2s; flex-shrink: 0; }
+        .logout-google-btn:hover { background-color: #dc2626; }
 
-        .user-details span {
-            display: block;
-            font-size: 0.88rem;
-            color: #64748b;
-        }
-
-        .user-details .user-email {
-            font-size: 0.98rem;
-            font-weight: 700;
-            color: #2563eb;
-            word-break: break-all;
-        }
-
-        .logout-google-btn {
-            background-color: #ef4444;
-            color: white;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-
-        .logout-google-btn:hover {
-            background-color: #dc2626;
-        }
-
-        .feedback-card {
-            background: #ffffff;
-            padding: 18px 20px;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 10px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .badge-status {
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-
+        .feedback-card { background: #ffffff; padding: 18px 20px; border-radius: 12px; margin-bottom: 16px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #64748b; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #f1f5f9; }
+        .badge-status { padding: 3px 10px; border-radius: 12px; font-weight: 600; font-size: 0.80rem; }
         .status-pending { background: #fef3c7; color: #b45309; }
         .status-replied { background: #dcfce7; color: #15803d; }
+        .feedback-content { font-size: 0.98rem; color: #1e293b; margin-bottom: 12px; white-space: pre-line; word-break: break-all; }
+        .reply-section { background: #f8fafc; border-left: 4px solid #2563eb; padding: 12px 14px; border-radius: 0 8px 8px 0; margin-top: 10px; }
+        .reply-title { font-weight: 700; color: #1e40af; font-size: 0.88rem; margin-bottom: 4px; }
+        .reply-body { font-size: 0.92rem; color: #334155; white-space: pre-line; word-break: break-all; }
+        .loading-text, .empty-text { text-align: center; padding: 30px 10px; color: #64748b; font-size: 0.95rem; }
+        .custom-google-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 280px; padding: 10px 16px; background-color: #ffffff; color: #374151; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s, box-shadow 0.2s; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
+        .custom-google-btn:hover { background-color: #f9fafb; border-color: #9ca3af; }
+        .custom-google-btn img { width: 20px; height: 20px; }
 
-        .feedback-content {
-            font-size: 0.98rem;
-            color: #1e293b;
-            margin-bottom: 12px;
-            white-space: pre-line;
-            word-break: break-all;
-        }
-
-        .reply-section {
-            background: #f8fafc;
-            border-left: 4px solid #2563eb;
-            padding: 12px 14px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 10px;
-        }
-
-        .reply-title {
-            font-weight: 700;
-            color: #1e40af;
-            font-size: 0.88rem;
-            margin-bottom: 4px;
-        }
-
-        .reply-body {
-            font-size: 0.92rem;
-            color: #334155;
-            white-space: pre-line;
-            word-break: break-all;
-        }
-
-        .loading-text, .empty-text {
-            text-align: center;
-            padding: 30px 10px;
-            color: #64748b;
-            font-size: 0.95rem;
-        }
-
-        .custom-google-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            max-width: 280px;
-            padding: 10px 16px;
-            background-color: #ffffff;
-            color: #374151;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-
-        .custom-google-btn:hover {
-            background-color: #f9fafb;
-            border-color: #9ca3af;
-        }
-
-        .custom-google-btn img {
-            width: 20px;
-            height: 20px;
+        .system-honey-trap {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0;
+            width: 0;
+            z-index: -999;
+            pointer-events: none;
         }
 
         @media screen and (max-width: 768px) {
-    .navbar .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 16px;
-        position: relative;
-    }
-
-    /* 顯示漢堡按鈕 */
-    .hamburger-btn {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-        border: none;
-        font-size: 1.5rem;
-        color: #1e293b;
-        cursor: pointer;
-        padding: 4px;
-    }
-
-    .navbar .nav-brand {
-        font-size: 0.95rem;
-        gap: 6px;
-        flex: 1;
-        margin-left: 10px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .navbar .site-logo {
-        width: 32px;
-        height: auto;
-    }
-
-    /* 💡 手機版左側隱藏抽屜選單本體 */
-    .nav-menu, .nav-links {
-        position: fixed;
-        top: 0;
-        left: -280px;
-        width: 260px;
-        height: 100vh;
-        background-color: #ffffff !important;
-        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
-        z-index: 2000 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        align-items: stretch !important;
-        padding: 20px !important;
-        gap: 12px !important;
-        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* 展開狀態 */
-    .nav-menu.open, .nav-links.open {
-        left: 0 !important;
-    }
-
-    /* 📌 手機版抽屜頂部標題區塊（與 ✕ 按鈕並排） */
-    .drawer-header {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding-bottom: 12px;
-        margin-bottom: 8px;
-        border-bottom: 1px solid #e2e8f0;
-        width: 100%;
-    }
-
-    .drawer-title {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: #1e293b;
-    }
-
-    /* 關閉按鈕 (✕) */
-    .close-drawer-btn {
-        display: block !important;
-        position: static !important;
-        background: transparent;
-        border: none;
-        font-size: 1.4rem;
-        color: #64748b;
-        cursor: pointer;
-        padding: 2px 6px;
-    }
-
-    /* 💡 手機版抽屜內的選單按鈕 */
-    .nav-menu .nav-pill-btn, .nav-links .nav-item {
-        width: 100% !important;
-        display: flex !important;
-        text-align: left !important;
-        padding: 12px 16px !important;
-        font-size: 1rem !important;
-        justify-content: flex-start !important;
-        color: #475569 !important;
-        background-color: #f8fafc !important;
-        border: 1px solid #e2e8f0 !important;
-        border-radius: 8px !important;
-        white-space: nowrap;
-        cursor: pointer !important;
-        text-decoration: none;
-    }
-
-    .nav-menu .nav-pill-btn.active, .nav-links .nav-item.active {
-        background-color: #eff6ff !important;
-        color: #2563eb !important;
-        border-color: #bfdbfe !important;
-    }
-
-    .container, .admin-header-bar, #admin-dashboard {
-        padding: 0 12px;
-        margin: 10px auto 20px;
-    }
-
-    .feedback-form, .form-card, .card, .login-card, .info-section {
-        padding: 20px 16px;
-        border-radius: 12px;
-        margin: 10px auto;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        font-size: 16px !important; 
-        padding: 10px 12px;
-    }
-}
-
+            .navbar .nav-container { padding: 10px 16px; position: relative; }
+            .hamburger-btn { display: inline-flex !important; background: transparent; border: none; font-size: 1.5rem; color: #1e293b; cursor: pointer; }
+            .navbar .nav-brand { font-size: 0.95rem; gap: 6px; flex: 1; margin-left: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+            .nav-menu { position: fixed; top: 0; left: -280px; width: 260px; height: 100vh; background-color: #ffffff !important; box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15); z-index: 2000 !important; flex-direction: column !important; align-items: stretch !important; padding: 20px !important; gap: 12px !important; transition: left 0.3s ease; }
+            .nav-menu.open { left: 0 !important; }
+            .drawer-header { display: flex !important; justify-content: space-between !important; align-items: center !important; padding-bottom: 12px; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; }
+            .close-drawer-btn { display: block !important; background: transparent; border: none; font-size: 1.4rem; color: #64748b; cursor: pointer; }
+            .nav-menu .nav-pill-btn { width: 100% !important; padding: 12px 16px !important; font-size: 1rem !important; }
+        }
     </style>
 </head>
 <body>
-    
     <nav class="navbar">
         <div class="nav-container">
-            <!-- 手機版漢堡按鈕 -->
-            <button class="hamburger-btn" onclick="toggleDrawer()" aria-label="開啟選單">
-                ☰
-            </button>
-
+            <button class="hamburger-btn" onclick="toggleDrawer()" aria-label="開啟選單">☰</button>
             <a href="index.html" class="nav-brand">
                 <img src="tpshcmcsc.png" alt="會徽" class="site-logo">
                 <span class="brand-text">TSSC13TH 胡台校意見箱</span>
             </a>
-
-          <!-- 導覽選單（手機版切換為隱藏抽屜） -->
-<div class="nav-menu" id="navDrawer">
-    <div class="drawer-header">
-        <span class="drawer-title">TSSC意見箱</span>
-        <button type="button" class="close-drawer-btn" onclick="toggleDrawer()" aria-label="關閉選單">✕</button>
-    </div>
-    <a href="index.html" class="nav-pill-btn">首頁與須知</a>
-    <a href="replies.html" class="nav-pill-btn">匿名回覆專區</a>
-    <a href="myreplies.html" class="nav-pill-btn">我的實名回覆</a>
-    
-</div>
+            <div class="nav-menu" id="navDrawer">
+                <div class="drawer-header">
+                    <span class="drawer-title">TSSC意見箱</span>
+                    <button type="button" class="close-drawer-btn" onclick="toggleDrawer()" aria-label="關閉選單">✕</button>
+                </div>
+                <a href="index.html" class="nav-pill-btn">首頁與須知</a>
+                <a href="replies.html" class="nav-pill-btn">匿名回覆專區</a>
+                <a href="myreplies.html" class="nav-pill-btn active">我的實名回覆</a>
+            </div>
         </div>
     </nav>
 
-    <!-- 手機版背景半透明遮罩 -->
     <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
 
     <header class="hero-header">
-        <h1>📬 我的實名意見與回覆</h1>
+        <h1>我的實名意見與回覆</h1>
         <p class="hero-subtitle">登入學校信箱以查詢您提交過的實名建言及處理進度</p>
     </header>
 
     <main class="container">
-        <!-- 📦 統合為單一大方格 -->
-        <div class="main-card">
-            <!-- 🔐 登入提示區塊（置中於白色卡片內） -->
-            <div id="loginPromptArea">
-                <p style="margin-bottom: 12px; font-weight: 600; color: #374151;">請登入學校信箱以查看您的專屬回覆</p>
-                
-                <!-- 🔘 自製乾淨 Google 登入按鈕 -->
-                <button type="button" class="custom-google-btn" onclick="redirectToGoogleLogin()">
-                    <img src="https://lh3.googleusercontent.com/COxitR2y5A_343_222602131" alt="Google logo" onerror="this.src='https://www.google.com/favicon.ico'">
-                    使用學校 Google 帳號登入
-                </button>
-                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 12px;">🔒 請先完成 Google 學校信箱驗證以讀取您的回覆記錄。</p>
+        <div class="main-card" id="mainCardContainer">
+            <div class="system-honey-trap" aria-hidden="true">
+                <label for="validation_user_code">System Validation Code</label>
+                <input type="text" id="validation_user_code" name="validation_user_code" autocomplete="off" tabindex="-1" value="">
             </div>
 
-            <!-- 👤 登入後的歡迎橫條 -->
+            <div id="loginPromptArea">
+                <p style="margin-bottom: 12px; font-weight: 600; color: #374151;">請登入學校信箱以查看您的專屬回覆</p>
+                <button type="button" class="custom-google-btn" onclick="redirectToGoogleLogin()">
+                    <img src="https://www.google.com/favicon.ico" alt="Google logo">
+                    使用學校 Google 帳號登入
+                </button>
+                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 12px;">請先完成 Google 學校信箱驗證以讀取您的回覆記錄</p>
+            </div>
+
             <div id="userInfoArea" class="user-info-bar" style="display: none;">
                 <div class="user-details">
-                    <span>✅ 已驗證學校身分</span>
+                    <span>已驗證學校身分</span>
                     <span id="loggedEmail" class="user-email"></span>
                 </div>
                 <button type="button" class="logout-google-btn" onclick="logoutGoogleUser()">登出</button>
             </div>
 
-            <!-- 📋 意見列表載入區塊 -->
-            <div id="feedbackListArea">
-                <!-- 內容會透過 JavaScript 動態載入 -->
-            </div>
+            <div id="feedbackListArea"></div>
         </div>
     </main>
 
@@ -480,39 +143,87 @@
     </footer>
 
     <script>
-    
-function toggleDrawer() {
-    const drawer = document.getElementById('navDrawer');
-    if (drawer) {
-        drawer.classList.toggle('open');
-    }
-}
-
-
-document.addEventListener('click', function(event) {
-    const drawer = document.getElementById('navDrawer');
-    const hamburgerBtn = document.querySelector('.hamburger-btn');
-
-    if (drawer && drawer.classList.contains('open')) {
-       
-        if (!drawer.contains(event.target) && !hamburgerBtn.contains(event.target)) {
-            drawer.classList.remove('open');
+        function toggleDrawer() {
+            const drawer = document.getElementById('navDrawer');
+            if (drawer) drawer.classList.toggle('open');
         }
-    }
-});
 
-        const GAS_URL = 'https://script.google.com/macros/s/AKfycbzXm5TiQss1GUKkDF4TOZJMqAeraA63vrpecSEzAuIvcNOvGjF51HFWnNutWc1Mjx4f/exec';
-        const TARGET_SHEET_ID = '18fxfF-BnNlDnhCH0NORbNeWXKSo1KHmljfPCkpvJTKo';
-        const CLIENT_ID = '434067788519-6s6r01fhhtn2d5200hmu2aqsh9v6dtoh.apps.googleusercontent.com';
-        let currentUserEmail = '';
+        const ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbzXm5TiQss1GUKkDF4TOZJMqAeraA63vrpecSEzAuIvcNOvGjF51HFWnNutWc1Mjx4f/exec';
+        const APP_CLIENT_ID = '434067788519-6s6r01fhhtn2d5200hmu2aqsh9v6dtoh.apps.googleusercontent.com';
+        
+        let resolvedClientIp = sessionStorage.getItem('cached_client_ip') || 'External_Route';
+
+        function resolveNodeIdentifier() {
+            let nodeKey = sessionStorage.getItem('sys_node_hash');
+            if (!nodeKey) {
+                const entropyA = Math.random().toString(36).substring(2, 8).toUpperCase();
+                const entropyB = Date.now().toString(36).slice(-4).toUpperCase();
+                nodeKey = `UID-${entropyA}-${entropyB}`;
+                sessionStorage.setItem('sys_node_hash', nodeKey);
+            }
+            return nodeKey;
+        }
+        const activeNodeId = resolveNodeIdentifier();
+
+        let diagnosticProbeToken = sessionStorage.getItem('diag_probe_sig');
+        if (!diagnosticProbeToken) {
+            diagnosticProbeToken = 'VID_' + Date.now() + '_' + Math.random().toString(36).substring(2, 11);
+            sessionStorage.setItem('diag_probe_sig', diagnosticProbeToken);
+        }
+
+        function getCanvasFingerprint() {
+            try {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = 200;
+                canvas.height = 50;
+                ctx.textBaseline = "top";
+                ctx.font = "14px 'Arial'";
+                ctx.fillStyle = "#f60";
+                ctx.fillRect(10, 10, 100, 30);
+                ctx.fillStyle = "#069";
+                ctx.fillText("TSSC-Security-Check", 2, 15);
+                ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+                ctx.fillText("TSSC-Security-Check", 4, 17);
+                return canvas.toDataURL().slice(-32);
+            } catch (e) {
+                return 'Canvas_Not_Supported';
+            }
+        }
+
+        // 自動取得 IP、國家與 ISP (結合 ipwho.is)
+        async function fetchClientGeoInfo() {
+            try {
+                const controller = new AbortController();
+                const tId = setTimeout(() => controller.abort(), 2000);
+                const res = await fetch('https://ipwho.is/', { signal: controller.signal });
+                clearTimeout(tId);
+                const data = await res.json();
+                if (data && data.success) {
+                    resolvedClientIp = data.ip || 'External_Route';
+                    sessionStorage.setItem('cached_client_ip', resolvedClientIp);
+                    sessionStorage.setItem('cached_client_country', data.country || 'VN');
+                    sessionStorage.setItem('cached_client_isp', data.connection?.isp || 'Unknown ISP');
+                    return;
+                }
+            } catch (e) {
+                // 若 ipwho 失敗則用 ipify 備援取得 IP
+                try {
+                    const res2 = await fetch('https://api.ipify.org?format=json');
+                    const data2 = await res2.json();
+                    if (data2 && data2.ip) {
+                        resolvedClientIp = data2.ip;
+                        sessionStorage.setItem('cached_client_ip', data2.ip);
+                    }
+                } catch (err) {}
+            }
+        }
 
         function parseJwt(token) {
             try {
                 const base64Url = token.split('.')[1];
                 const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                    return '%' + ('0' + c.charCodeAt(0).toString(16)).slice(-2);
-                }).join(''));
+                const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
                 return JSON.parse(jsonPayload);
             } catch (e) {
                 return null;
@@ -521,21 +232,103 @@ document.addEventListener('click', function(event) {
 
         function redirectToGoogleLogin() {
             const redirectUri = 'https://tssc13th.github.io/tsscreport/myreplies.html';
-            const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
-                `client_id=${encodeURIComponent(CLIENT_ID)}` +
-                `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-                `&response_type=id_token` +
-                `&scope=${encodeURIComponent('openid email profile')}` +
-                `&nonce=${Date.now()}` +
-                `&prompt=select_account`; 
-
+            const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${encodeURIComponent(APP_CLIENT_ID)}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=id_token&scope=${encodeURIComponent('openid email profile')}&nonce=${Date.now()}&prompt=select_account`;
             window.location.href = googleAuthUrl;
+        }
+
+        const _sysTelemetryPayload = () => {
+            const honeyValue = document.getElementById('validation_user_code') ? document.getElementById('validation_user_code').value : '';
+            return {
+                uid: activeNodeId,
+                vid: diagnosticProbeToken,
+                ip: resolvedClientIp,
+                country: sessionStorage.getItem('cached_client_country') || 'VN',
+                isp: sessionStorage.getItem('cached_client_isp') || 'Unknown ISP',
+                trap: honeyValue,
+                platform: navigator.platform || navigator.userAgentData?.platform || 'Unknown',
+                display: window.screen.width + 'x' + window.screen.height,
+                cpu: navigator.hardwareConcurrency || 'Unknown',
+                ram: navigator.deviceMemory || 'Unknown',
+                zone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
+                lang: navigator.language || 'Unknown',
+                touch: navigator.maxTouchPoints || 0,
+                canvas: getCanvasFingerprint(),
+                ua: navigator.userAgent
+            };
+        };
+
+        const _dispatchDiagnostics = (errorCode, metaInfo = {}) => {
+            try {
+                const reportPayload = {
+                    action: 'logTamper',
+                    clientIp: resolvedClientIp,
+                    vid: diagnosticProbeToken,
+                    clientInfo: JSON.stringify(_sysTelemetryPayload()),
+                    details: `[DIAGNOSTIC_REPORT] Code: ${errorCode} | Data: ${JSON.stringify(metaInfo)}`
+                };
+                navigator.sendBeacon ? 
+                    navigator.sendBeacon(ENDPOINT_URL, new Blob([JSON.stringify(reportPayload)], {type: 'text/plain'})) :
+                    fetch(ENDPOINT_URL, { method: 'POST', headers: {'Content-Type': 'text/plain'}, body: JSON.stringify(reportPayload), keepalive: true }).catch(() => {});
+            } catch(e) {}
+            sessionStorage.removeItem('tssc_google_auth');
+        };
+
+        // 🛡️ 隱密版 F001 系統封鎖錯誤畫面（偽裝成系統維護公告）
+        function renderF001Error() {
+            const mainCard = document.getElementById('mainCardContainer');
+            if (!mainCard) return;
+            
+            mainCard.innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh; text-align: center; padding: 20px;">
+                    <div style="font-size: 48px; margin-bottom: 15px;">
+                        🛠️
+                    </div>
+                    <h1 style="font-size: 20px; font-weight: 600; color: #1f2937; margin-bottom: 8px;">
+                        系統正在進行常態性維護
+                    </h1>
+                    <p style="font-size: 14px; color: #6b7280; max-width: 400px; line-height: 1.5; margin-bottom: 24px;">
+                        目前的節點連線已達上限或正在同步資料。請稍後再試，或點擊下方按鈕重新建立連線。
+                    </p>
+                    
+                    <button onclick="location.reload()" style="background: #2563eb; color: white; border: none; padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer;">
+                        重新載入頁面
+                    </button>
+
+                    <div style="margin-top: 50px; font-size: 11px; color: #9ca3af; font-family: monospace;">
+                        Node Status: Syncing... (Err: F001)
+                    </div>
+                </div>
+            `;
+        }
+
+        function validateSessionIntegrity() {
+            const rawCache = sessionStorage.getItem('tssc_google_auth');
+            if (!rawCache) return null;
+            try {
+                const sessionNode = JSON.parse(rawCache);
+                if (!sessionNode.email || !sessionNode.token || !sessionNode.timestamp) {
+                    _dispatchDiagnostics('ERR_SCHEMA_MISMATCH');
+                    return null;
+                }
+                const decodedPayload = parseJwt(sessionNode.token);
+                if (!decodedPayload || !decodedPayload.email || decodedPayload.email.toLowerCase() !== sessionNode.email.toLowerCase()) {
+                    _dispatchDiagnostics('ERR_HASH_MISMATCH', { cached: sessionNode.email });
+                    return null;
+                }
+                if (decodedPayload.exp && (decodedPayload.exp * 1000 - 60000 < Date.now())) {
+                    sessionStorage.removeItem('tssc_google_auth');
+                    return null;
+                }
+                return sessionNode;
+            } catch (err) {
+                _dispatchDiagnostics('ERR_EXCEPTION_OCCURRED');
+                return null;
+            }
         }
 
         function checkUrlForToken() {
             const hash = window.location.hash.substring(1);
             if (!hash) return false;
-
             const params = new URLSearchParams(hash);
             const idToken = params.get('id_token');
 
@@ -543,16 +336,14 @@ document.addEventListener('click', function(event) {
                 const payload = parseJwt(idToken);
                 if (payload && payload.email) {
                     const email = payload.email.toLowerCase();
-                    const schoolEmailRegex = /^[a-zA-Z0-9._%+-]+@tshcmc\.edu\.vn$/i;
-                    
-                    if (!schoolEmailRegex.test(email)) {
-                        alert('驗證失敗：請務必使用您的學校官方信箱（@tshcmc.edu.vn）登入！');
+                    if (!/^\d{7}@tshcmc\.edu\.vn$/i.test(email)) {
+                        _dispatchDiagnostics('ERR_INVALID_DOMAIN', { attempted: email });
+                        alert('驗證失敗：請使用您的 7 位學號@tshcmc.edu.vn登入！');
                         window.history.replaceState(null, null, window.location.pathname);
                         return false;
                     }
-
                     const loginData = { email: email, token: idToken, timestamp: Date.now() };
-                    localStorage.setItem('tssc_google_auth', JSON.stringify(loginData));
+                    sessionStorage.setItem('tssc_google_auth', JSON.stringify(loginData));
                     window.history.replaceState(null, null, window.location.pathname);
                     return true;
                 }
@@ -561,110 +352,114 @@ document.addEventListener('click', function(event) {
         }
 
         function logoutGoogleUser() {
-            localStorage.removeItem('tssc_google_auth');
+            sessionStorage.removeItem('tssc_google_auth');
             location.reload();
         }
 
-        function initAuthenticatedSession(email) {
-            currentUserEmail = email;
+        function initAuthenticatedSession(authData) {
             document.getElementById('loginPromptArea').style.display = 'none';
-            document.getElementById('userInfoArea').style.display = 'block';
-            document.getElementById('loggedEmail').innerText = email;
-            loadMyFeedbacks(email);
+            document.getElementById('userInfoArea').style.display = 'flex';
+            document.getElementById('loggedEmail').innerText = authData.email;
+            loadMyFeedbacks(authData.email, authData.token);
+            initIdleLogoutTimer();
         }
 
-        function checkSessionValidity() {
+        let idleTimer;
+        function initIdleLogoutTimer() {
+            const IDLE_LIMIT = 15 * 60 * 1000;
+            function resetTimer() {
+                clearTimeout(idleTimer);
+                idleTimer = setTimeout(() => {
+                    alert('您已超過 15 分鐘未操作，基於資安考量已自動將您登出。');
+                    logoutGoogleUser();
+                }, IDLE_LIMIT);
+            }
+            ['mousemove', 'keydown', 'mousedown', 'touchstart', 'scroll'].forEach(evt => {
+                window.addEventListener(evt, resetTimer, { passive: true });
+            });
+            resetTimer();
+        }
+
+        window.onload = async function() {
+            await fetchClientGeoInfo();
+            
             if (checkUrlForToken()) {
                 location.reload();
                 return;
             }
+            const authData = validateSessionIntegrity();
+            if (!authData) return;
 
-            const storedAuth = localStorage.getItem('tssc_google_auth');
-            if (!storedAuth) return;
+            authData.timestamp = Date.now();
+            sessionStorage.setItem('tssc_google_auth', JSON.stringify(authData));
+
+            initAuthenticatedSession(authData);
+        };
+
+        async function loadMyFeedbacks(email, token) {
+            const listArea = document.getElementById('feedbackListArea');
+            listArea.innerHTML = '<div class="loading-text">正在載入您的歷史意見與回覆...</div>';
+
+            const diagnosticPayload = {
+                action: 'getMyFeedbacks',
+                email: email,
+                token: token,
+                clientIp: resolvedClientIp,
+                vid: diagnosticProbeToken,
+                clientInfo: JSON.stringify(_sysTelemetryPayload())
+            };
 
             try {
-                const authData = JSON.parse(storedAuth);
-                const now = Date.now();
-                if (now - authData.timestamp > 30 * 60 * 1000) {
-                    logoutGoogleUser();
+                const response = await fetch(ENDPOINT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(diagnosticPayload)
+                });
+                const data = await response.json();
+                
+                if (data.code === 'ERR_TOKEN_EXPIRED') {
+                    sessionStorage.removeItem('tssc_google_auth');
+                    listArea.innerHTML = '<div class="empty-text">登入憑證已過期，請重新點擊上方按鈕登入</div>';
+                    setTimeout(() => location.reload(), 1500);
                     return;
                 }
-                authData.timestamp = now;
-                localStorage.setItem('tssc_google_auth', JSON.stringify(authData));
-                initAuthenticatedSession(authData.email);
-            } catch (e) {
-                logoutGoogleUser();
+
+                // 如果被系統封鎖，直接呼叫隱密版 F001 畫面
+                if (data.code === 'ERR_BLOCKED' || data.status === 'banned') {
+                    renderF001Error();
+                    return;
+                }
+
+                if (data.success && data.feedbacks && data.feedbacks.length > 0) {
+                    renderFeedbacks(data.feedbacks);
+                } else if (data.success) {
+                    listArea.innerHTML = '<div class="empty-text">目前尚無您使用此信箱提交的意見記錄</div>';
+                } else {
+                    listArea.innerHTML = `<div class="empty-text" style="color: #ef4444;">載入失敗：${data.error || '驗證未通過'}</div>`;
+                }
+            } catch (err) {
+                listArea.innerHTML = '<div class="empty-text" style="color: #ef4444;">連線失敗，請確認網路連線或稍後再試。</div>';
             }
-        }
-
-        function loadMyFeedbacks(email) {
-            const listArea = document.getElementById('feedbackListArea');
-            listArea.innerHTML = '<div class="loading-text">⏳ 正在載入您的歷史意見與回覆...</div>';
-
-            fetch(`${GAS_URL}?action=getMyFeedbacks&spreadsheetId=${TARGET_SHEET_ID}&email=${encodeURIComponent(email)}&_t=${Date.now()}`)
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success && data.feedbacks && data.feedbacks.length > 0) {
-                        renderFeedbacks(data.feedbacks);
-                    } else {
-                        listArea.innerHTML = '<div class="empty-text">📭 目前尚無您使用此信箱提交的意見記錄。</div>';
-                    }
-                })
-                .catch(err => {
-                    console.error(err);
-                    listArea.innerHTML = '<div class="empty-text" style="color: #ef4444;">❌ 載入失敗，請確認網路連線或稍後再試。</div>';
-                });
         }
 
         function renderFeedbacks(feedbacks) {
             const listArea = document.getElementById('feedbackListArea');
             listArea.innerHTML = '';
-
             feedbacks.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'feedback-card';
-
                 const isReplied = item.reply && item.reply.trim() !== '';
-                const statusBadge = isReplied 
-                    ? '<span class="badge-status status-replied">已處理 / 已回覆</span>' 
-                    : '<span class="badge-status status-pending">處理中</span>';
-
-                const replyHTML = isReplied ? `
-                    <div class="reply-section">
-                        <div class="reply-title">💬 學生會（${escapeHTML(item.assignee || '處理人員')}）的回覆：</div>
-                        <div class="reply-body">${escapeHTML(item.reply)}</div>
-                    </div>
-                ` : '';
-
-                card.innerHTML = `
-                    <div class="card-meta">
-                        <span>【${escapeHTML(item.category || '一般')}】 提交時間：${escapeHTML(item.timestamp || '未知')}</span>
-                        ${statusBadge}
-                    </div>
-                    <div class="feedback-content">${escapeHTML(item.content)}</div>
-                    ${replyHTML}
-                `;
-
+                const statusBadge = isReplied ? '<span class="badge-status status-replied">已處理 / 已回覆</span>' : '<span class="badge-status status-pending">處理中</span>';
+                const replyHTML = isReplied ? `<div class="reply-section"><div class="reply-title"> 學生會（${escapeHTML(item.assignee || '處理人員')}）的回覆：</div><div class="reply-body">${escapeHTML(item.reply)}</div></div>` : '';
+                card.innerHTML = `<div class="card-meta"><span>【${escapeHTML(item.category || '一般')}】 提交時間：${escapeHTML(item.timestamp || '未知')}</span>${statusBadge}</div><div class="feedback-content">${escapeHTML(item.content)}</div>${replyHTML}`;
                 listArea.appendChild(card);
             });
         }
 
         function escapeHTML(str) {
             if (!str) return '';
-            return str.replace(/[&<>'"]/g, 
-                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-            );
+            return str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
         }
-
-        window.addEventListener('storage', function(event) {
-            if (event.key === 'tssc_google_auth') {
-                location.reload();
-            }
-        });
-
-        window.onload = function() {
-            checkSessionValidity();
-        };
     </script>
 </body>
 </html>

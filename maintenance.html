@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://script.google.com https://script.googleusercontent.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' https://tssc13th.github.io data:;">
+
     <title>系統通知 - TSSC13TH 胡台校意見箱</title>
     <style>
         * {
@@ -32,9 +34,6 @@
             text-align: center;
         }
 
-      
-
-        /* 警告 Icon 區塊 */
         .icon-box {
             width: 68px;
             height: 68px;
@@ -45,7 +44,22 @@
             align-items: center;
             margin: 0 auto 20px;
             font-size: 2rem;
-            animation: redGlowBreathing 1.2s infinite ease-in-out; /* 閃爍紅光 */
+            animation: redGlowBreathing 1.2s infinite ease-in-out;
+        }
+
+        @keyframes redGlowBreathing {
+            0% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 22px 6px rgba(239, 68, 68, 0.85);
+                transform: scale(1.05);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+                transform: scale(1);
+            }
         }
 
         .title {
@@ -99,12 +113,10 @@
 <body>
 
     <div class="card">
-        <!-- 圖示 (黃色警告 + 閃爍紅光) -->
         <div class="icon-box">
             ⚠️
         </div>
 
-        <!-- 文字層級 -->
         <div class="title">系統通知</div>
 
         <div class="main-message">
@@ -115,7 +127,7 @@
             維護期間將暫時停止意見投遞等功能，造成不便，敬請見諒
         </div>
 
-        <!-- 預計時間顯示（B3 有填寫時自動顯示） -->
+       
         <div id="timeBox" class="time-text" style="display: none;">
             預計恢復使用時間：<span id="maintenanceTimeText"></span>
         </div>
@@ -124,35 +136,31 @@
             胡志明市台灣學校學生會 TSSC13TH
         </div>
 
-        <!-- 底部狀態標籤 -->
         <div>
             <div class="badge-status">
-                🛠️ 系統目前處於維護狀態
+                 系統目前處於維護狀態
             </div>
         </div>
     </div>
 
     <script>
         const GAS_URL = 'https://script.google.com/macros/s/AKfycbzXm5TiQss1GUKkDF4TOZJMqAeraA63vrpecSEzAuIvcNOvGjF51HFWnNutWc1Mjx4f/exec';
-        // 指定遠端鎖定 Control Sheet ID
-        const TARGET_SHEET_ID = '18fxfF-BnNlDnhCH0NORbNeWXKSo1KHmljfPCkpvJTKo';
+        let maintenanceInterval = null;
 
         function checkUnlockStatus() {
-            // 加上時間戳 _t 避免瀏覽器快取，並指定 spreadsheetId 參數
-            fetch(`${GAS_URL}?action=checkLockStatus&spreadsheetId=${TARGET_SHEET_ID}&_t=${Date.now()}`)
+            fetch(`${GAS_URL}?action=checkLockStatus&_t=${Date.now()}`)
                 .then(res => {
                     if (!res.ok) throw new Error('HTTP 錯誤');
                     return res.json();
                 })
                 .then(data => {
-                    // 🔒 嚴格判斷：只有當明確回傳 locked === false 且 maintenance === false 時才允許跳轉回首頁
                     if (data && typeof data.locked !== 'undefined') {
                         if (data.locked === false && data.maintenance === false) {
+                            if (maintenanceInterval) clearInterval(maintenanceInterval);
                             window.location.href = 'index.html';
                             return;
                         }
 
-                        // 讀取 B3 儲存格預計恢復時間
                         const timeBox = document.getElementById('timeBox');
                         const timeText = document.getElementById('maintenanceTimeText');
                         if (data.maintenanceTime) {
@@ -163,13 +171,12 @@
                         }
                     }
                 })
-                .catch(err => console.error('維護狀態檢測失敗:', err));
+                .catch(err => console.warn('維護狀態檢測連線波動，維持維護畫面:', err.message));
         }
 
-        // 頁面載入時執行，並設置 1 秒定期檢測，達到秒級跳轉
         window.onload = function() {
             checkUnlockStatus();
-            setInterval(checkUnlockStatus, 1000);
+            maintenanceInterval = setInterval(checkUnlockStatus, 10000);
         };
     </script>
 </body>
